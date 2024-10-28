@@ -7,7 +7,7 @@ const HomePage = () => {
   const [lands, setLands] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/lands')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/lands`)
       .then(response => setLands(response.data))
       .catch(error => console.log(error));
   }, []);
@@ -37,8 +37,7 @@ const HomePage = () => {
       <ul>
         {lands.map(land => (
           <li key={land._id}>
-            <h2>{land.title}</h2>
-            <p>{land.description}</p>
+            <h2>{land.name}</h2>
             <p>Price: {land.price}</p>
             <Link to={`/land/${land._id}`} className="view-details-link">View Details</Link>
           </li>
