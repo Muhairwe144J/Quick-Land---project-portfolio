@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Payment.css'; // Add custom styles for the form
+import { Link } from 'react-router-dom';
 
 const Payment = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -15,7 +16,7 @@ const Payment = () => {
       const token = localStorage.getItem('token'); // User authentication token
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
-      const res = await axios.post('/api/payment/pay', { amount, phoneNumber }, config);
+       await axios.post('/api/payment/pay', { amount, phoneNumber }, config);
       setMessage('Payment request sent successfully. Awaiting confirmation...');
       setIsLoading(false);
     } catch (error) {
@@ -56,6 +57,10 @@ const Payment = () => {
         </button>
       </form>
       {message && <p className="payment-message">{message}</p>}
+	  {/* Link to Payment Status */}
+      <p>
+        <Link to="/payment-status">Check Payment Status</Link>
+      </p>
     </div>
   );
 };

@@ -44,3 +44,17 @@
   text-align: center;
   color: #28a745;
 }
+.payment-status {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.payment-status h2 {
+  color: #4CAF50; /* green color for successful payment */
+}
+
+.payment-status p {
+  font-size: 1.2em;
+}
+
