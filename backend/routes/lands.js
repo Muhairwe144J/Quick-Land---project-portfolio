@@ -12,4 +12,15 @@ router.get('/', async (req, res) => {
     }
 });
 
+// GET a specific land by ID
+router.get('/:id', async (req, res) => {
+    try {
+      const land = await Land.findById(req.params.id);
+      if (!land) return res.status(404).json({ message: 'Land not found' });
+      res.json(land);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  });
+
 module.exports = router;
