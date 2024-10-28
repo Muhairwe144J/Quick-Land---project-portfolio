@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer'; // Import Footer
 
 const ContactPage = () => {
     return (
@@ -20,6 +21,7 @@ const ContactPage = () => {
                 </div>
                 <button type="submit">Send Message</button>
             </form>
+            <Footer /> {/* Add Footer here */}
         </div>
     );
 };

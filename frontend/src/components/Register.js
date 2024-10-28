@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Footer from './Footer'; // Import Footer
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -37,6 +38,7 @@ const Register = () => {
         <button type="submit">Register</button>
         {error && <p>{error}</p>}
       </form>
+      <Footer /> {/* Add Footer here */}
     </div>
   );
 };

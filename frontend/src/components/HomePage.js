@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; /* Import Link for navigation */
 import './HomePage.css';
 import axios from 'axios';
+import Footer from './Footer'; // Import Footer
+
 
 const HomePage = () => {
   const [lands, setLands] = useState([]);
@@ -38,11 +40,13 @@ const HomePage = () => {
         {lands.map(land => (
           <li key={land._id}>
             <h2>{land.name}</h2>
+            <p>{land.description}</p>
             <p>Price: {land.price}</p>
             <Link to={`/land/${land._id}`} className="view-details-link">View Details</Link>
           </li>
         ))}
       </ul>
+      <Footer /> {/* Add Footer here */}
     </div>
   );
 };

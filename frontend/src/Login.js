@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Footer from './components/Footer'; // Import Footer
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -32,6 +33,7 @@ const Login = () => {
         <button type="submit">Login</button>
         {error && <p>{error}</p>}
       </form>
+      <Footer /> {/* Add Footer here */}
     </div>
   );
 };
