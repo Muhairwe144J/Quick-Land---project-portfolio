@@ -14,6 +14,7 @@ router.post('/register', async (req, res) => {
 
         user = new User({ name, email, password, role });
         await user.save();
+        console.log("user saved;\nuseremail; ",user.email)
 
         const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
@@ -37,6 +38,15 @@ router.post('/login', async (req, res) => {
         const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         res.json({ token });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+// Get all registered users (only accessible by authorized users)
+router.get('/users', async (req, res) => {
+    try {
+        const users = await User.find(); // Exclude password field
+        res.json(users);
     } catch (error) {
         res.status(500).json({ message: 'Server error' });
     }
