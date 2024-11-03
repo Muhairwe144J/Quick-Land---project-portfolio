@@ -1,19 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'; /* Import Link for navigation */
 import './HomePage.css';
-import axios from 'axios';
 import Footer from './Footer'; // Import Footer
 
-
 const HomePage = () => {
-  const [lands, setLands] = useState([]);
-
-  useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/lands`)
-      .then(response => setLands(response.data))
-      .catch(error => console.log(error));
-  }, []);
-
   return (
     <div className="homepage">
         <h1 className="title"> 
@@ -36,16 +26,6 @@ const HomePage = () => {
         <Link to="/login" className="button">Login</Link>
         <Link to="/register" className="button">Sign Up</Link>
       </div>
-      <ul>
-        {lands.map(land => (
-          <li key={land._id}>
-            <h2>{land.name}</h2>
-            <p>{land.description}</p>
-            <p>Price: {land.price}</p>
-            <Link to={`/land/${land._id}`} className="view-details-link">View Details</Link>
-          </li>
-        ))}
-      </ul>
       <Footer /> {/* Add Footer here */}
     </div>
   );

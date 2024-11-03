@@ -8,7 +8,7 @@ const ListingsPage = () => {
 
     useEffect(() => {
         // Fetch all lands from the backend
-        axios.get('/api/lands') // Adjust the endpoint if necessary
+        axios.get('http://localhost:5000/api/lands') // backend port having data
             .then(response => {
                 setLands(response.data);
             })
