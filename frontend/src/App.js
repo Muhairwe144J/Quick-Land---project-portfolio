@@ -14,6 +14,7 @@ import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
 import './components/Footer.css';          // Footer styling
+import './styles.css'; // Ensure your styles are imported
 
 function App() {
        // State to control footer visibility

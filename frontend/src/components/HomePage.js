@@ -11,6 +11,7 @@ const HomePage = () => {
         <span className="land">-Land</span>
         <span className="uganda"> Uganda</span>
       </h1>
+      <img src="https://img.youtube.com/vi/G1hKzCkywM8/maxresdefault.jpg" alt=""/>
         <div className="dropdown">
           <button className="dropbtn">Menu</button>
           <div className="dropdown-content">
