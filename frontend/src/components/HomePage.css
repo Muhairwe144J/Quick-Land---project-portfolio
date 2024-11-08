@@ -1,6 +1,7 @@
 /* Set background color and layout */
 .homepage {
     background-color: grey; /* grey background */
+    background-image: url('https://www.pik-potsdam.de/en/institute/departments/transformation-pathways/research/landuse/landuse-management/@@images/image.jpeg');
     min-height: 100vh;
     padding: 20px;
     text-align: center;

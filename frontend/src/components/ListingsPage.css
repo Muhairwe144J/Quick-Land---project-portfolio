@@ -1,0 +1,30 @@
+/* Full-page image background styling */
+.listings-page {
+    position: relative;
+    background-image: url('https://8515463.fs1.hubspotusercontent-na1.net/hubfs/8515463/What%20is%20sustainable%20land%20management%20-Pillar%20%20Combating%20Desertification_featured.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Content overlay styling */
+.content-overlay {
+    position: relative;
+    z-index: 1;
+    color: rgb(125, 52, 18);
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background color for readability */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: rgba(15, 14, 14, 0.8);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+}

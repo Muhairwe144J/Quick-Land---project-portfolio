@@ -23,7 +23,10 @@ function App() {
     return (
         <Router>
             <div>
-                <h1>Quick-Land Uganda</h1>
+                <h1>Quick-Land Uganda
+                {/* // <img src="logo512.png" alt="Logo"/> needs formating size */}
+                </h1>
+
                 <TabComponent />
                 <Routes>
                     <Route exact path="/" element={<HomePage />} />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Footer from './Footer'; // Import Footer
 import { Link } from 'react-router-dom';
+import './ListingsPage.css'; // Import CSS for styling
 
 const ListingsPage = () => {
     const [lands, setLands] = useState([]);
@@ -18,20 +19,23 @@ const ListingsPage = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Land Listings</h1>
-            <p>Here you can find various land listings available for sale.</p>
-            {/* Add more details about listings here, like a list of lands */}
-            <ul>
-            {lands.map(land => (
-                    <li key={land._id}>
-                        <h2>{land.title}</h2>
-                        <p>{land.description}</p>
-                        <p>Price: {land.price}</p>
-                        <Link to={`/land/${land._id}`}>View Details</Link>
-                    </li>
-                ))}
-            </ul>
+        <div className="listings-page">
+            {/* Content Overlay */}
+            <div className="content-overlay">
+                <h1>Land Listings</h1>
+                <p>Here you can find various land listings available for sale.</p>
+                <ul>
+                    {lands.map(land => (
+                        <li key={land._id}>
+                            <h2>{land.title}</h2>
+                            <p>{land.description}</p>
+                            <p>Price: {land.price}</p>
+                            <Link to={`/land/${land._id}`}>View Details</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
             <Footer /> {/* Add Footer here */}
         </div>
     );

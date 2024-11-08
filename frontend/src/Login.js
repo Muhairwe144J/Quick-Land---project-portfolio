@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Footer from './components/Footer'; // Import Footer
+import './Access.css'; // Import CSS for styling
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -19,20 +20,23 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="access-page">
+            <div className="content">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit}/>
+      <form className="log-form">
+      <div className="form-group">
           <label>Email:</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="submit-button">Login</button>
         {error && <p>{error}</p>}
       </form>
+      </div>
       <Footer /> {/* Add Footer here */}
     </div>
   );
