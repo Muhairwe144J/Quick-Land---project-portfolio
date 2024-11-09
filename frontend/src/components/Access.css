@@ -72,3 +72,19 @@
 .submit-button:hover {
     background-color: #45a049;
 }
+
+.success-message {
+    color: rgb(234, 232, 237);
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .success-message, .error-message {
+    font-size: 1rem; /* Adjust as needed */
+    text-align: center; /* Center the message */
+    font-weight: bold;
+  }

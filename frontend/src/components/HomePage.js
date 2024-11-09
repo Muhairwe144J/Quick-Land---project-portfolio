@@ -11,7 +11,7 @@ const HomePage = () => {
         <span className="land">-Land</span>
         <span className="uganda"> Uganda</span>
       </h1>      
-      <p>Find your dream property here!</p>
+      <p>Find your dream plot here!</p>
       <div className="auth-links">
         <Link to="/login" className="button">Login</Link>
         <Link to="/register" className="button">Sign Up</Link>
