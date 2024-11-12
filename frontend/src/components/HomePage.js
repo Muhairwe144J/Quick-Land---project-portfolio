@@ -4,6 +4,25 @@ import './HomePage.css';
 import Footer from './Footer'; // Import Footer
 
 const HomePage = () => {
+  const user = localStorage.getItem('user');
+let parsedUser = null;
+
+if (user) {
+  try {
+    parsedUser = JSON.parse(user);
+  } catch (error) {
+    console.error('Error parsing user data:', error);
+  }
+}
+
+if (parsedUser) {
+  return (
+    <div className="profile">
+      <img src={user.profilePhoto} alt="Profile" className="profile-photo" />
+      <span>{user.name}</span>
+    </div>
+  );
+}
   return (
     <div className="homepage">
         <h1 className="title"> 

@@ -2,8 +2,10 @@ import React from 'react';
 import Footer from './Footer'; // Import Footer
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LandDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [land, setLand] = React.useState(null);
 
@@ -14,25 +16,15 @@ const LandDetails = () => {
       .catch(error => console.log(error));
   }, [id]);
 
-  const handlePayment = () => {
-    // Example payment data
-    const paymentData = {
-      landId: land._id,
-      amount: land.price, // Assuming price is a number
-    };
+   // Function to handle the payment
+  const handleBuyClick = () => {
+    navigate('/payment'); // Adjust the route path as needed
 
-    axios.post('http://localhost:5000/api/payment/process', paymentData) //connect to backend port
-      .then(response => {
-        alert('Payment Successful!');
-        // Redirect or update UI as necessary
-      })
-      .catch(error => {
-        console.error(error);
-        alert('Payment ongoing, if it takes long try again.');
-      });
   };
 
-  if (!land) return <div>Loading...</div>;
+  if (!land) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div
@@ -57,7 +49,9 @@ const LandDetails = () => {
     />
       <p>{land.description}</p>
       <p>Price: {land.price}</p>
-      <button onClick={handlePayment}>Buy Now</button>
+      <button className="buy-button" onClick={handleBuyClick}>
+        Buy
+      </button>
       <Link to="/listings"style={{ color: 'red', textDecoration: 'underline' }}>Back to Listings</Link>
       <Footer /> {/* Add Footer here */}
     </div>

@@ -1,7 +1,10 @@
 /* Set background color and layout */
 .homepage {
     background-color: grey; /* grey background */
-    background-image: url('https://www.pik-potsdam.de/en/institute/departments/transformation-pathways/research/landuse/landuse-management/@@images/image.jpeg');
+    background-image: url('https://www.landbrokermls.com/blog/blog-images/may23/land-surveying-guide.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     padding: 20px;
     text-align: center;
@@ -37,7 +40,7 @@
 
 h1 {
     color: #e8e0e0;
-    background-color: #5b3e04; /* Yellow background */
+    background-color: rgba(0, 0, 0, 0.6); /* Yellow background */
     font-size: 2.5em;
     margin-bottom: 10px;
     animation: slideIn 1.5s ease-out;
