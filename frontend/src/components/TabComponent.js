@@ -13,7 +13,7 @@ const TabComponent = () => {
                     className={activeTab === 'home' ? 'tab tab-active' : 'tab'}
                     onClick={() => setActiveTab('home')}
                 >
-                    home
+                    Home
                 </Link>
                 <Link
                     to="/listings"

@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Footer from './Footer'; // Import Footer
+import { Link } from 'react-router-dom';
+import './ListingsPage.css'; // Import CSS for styling
 
 const ListingsPage = () => {
+    const [lands, setLands] = useState([]);
+
+    useEffect(() => {
+        // Fetch all lands from the backend
+        axios.get('http://localhost:5000/api/lands') // backend port having data
+            .then(response => {
+                setLands(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching lands:', error);
+            });
+    }, []);
+
     return (
-        <div>
-            <h1>Land Listings</h1>
-            <p>Here you can find various land listings available for sale.</p>
-            {/* Add more details about listings here, like a list of lands */}
-            <ul>
-                <li>Land A - $10,000</li>
-                <li>Land B - $15,000</li>
-                <li>Land C - $25,000</li>
-                <li>Land D - $20,000</li>
-	        <li>Land E - $27,000</li>
-	        <li>Land F - $22,000</li>
-	        <li>Land G - $26,000</li>
-	        <li>Land H - $20,000</li>
-	        <li>Land K - $500,000</li>
-            </ul>
+        <div className="listings-page">
+            {/* Content Overlay */}
+            <div className="content-overlay">
+                <h1>Land Listings</h1>
+                <p>Here you can find various land listings available for sale.</p>
+                <ul>
+                    {lands.map(land => (
+                        <li key={land._id}>
+                            <h2>{land.title}</h2>
+                            <p>{land.description}</p>
+                            <p>Price: {land.price}</p>
+                            <Link to={`/land/${land._id}`}>View Details</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <Footer /> {/* Add Footer here */}
         </div>
     );
 };

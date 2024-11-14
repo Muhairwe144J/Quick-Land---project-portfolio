@@ -1,6 +1,10 @@
 /* Set background color and layout */
 .homepage {
     background-color: grey; /* grey background */
+    background-image: url('https://www.landbrokermls.com/blog/blog-images/may23/land-surveying-guide.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     padding: 20px;
     text-align: center;
@@ -17,15 +21,15 @@
 
 /* Colors for title parts */
 .quick {
-    color: black; /* Color for "Quick" */
+    color: rgb(239, 233, 233); /* Color for "Quick" */
 }
 
 .land {
-    color: red; /* Color for "Land" */
+    color: black; /* Color for "Land" */
 }
 
 .uganda {
-    color: black; /* Color for "Uganda" */
+    color: rgb(235, 231, 231); /* Color for "Uganda" */
 }
 
 /* Fade-in animation for page load */
@@ -35,8 +39,8 @@
 }
 
 h1 {
-    color: #333;
-    background-color: #FFEB3B; /* Yellow background */
+    color: #e8e0e0;
+    background-color: rgba(0, 0, 0, 0.6); /* Yellow background */
     font-size: 2.5em;
     margin-bottom: 10px;
     animation: slideIn 1.5s ease-out;
